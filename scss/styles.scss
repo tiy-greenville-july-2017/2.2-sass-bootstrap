@@ -1,0 +1,57 @@
+/* Bootstrap Variables */
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+// $grid-gutter-width: 20px;
+
+/* Import Bootstrap */
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "custom";
+
+/* Color Pallet */
+$primary-brand-color: orange;
+$heading-color: #BBB;
+$black: #000;
+$white: #FFF;
+$banner-color: #333;
+
+/* All the banner styles */
+.banner {
+  background: $white url('https://www.stevensegallery.com/800/400') no-repeat; //lighten($banner-color, 20%);
+  background-size: cover;
+  overflow: auto;
+  height: 100vh;
+
+  h1{
+    color: $heading-color;
+    text-align: center;
+  }
+
+  h2{
+    color: $heading-color;
+    text-align: center;
+  }
+}
+
+@media (min-width: $screen-md-min){
+  .photo-gallery{
+    margin-bottom: 20px;
+  }
+}
+
+.photo{
+  background: $white url('http://stevensegallery.com/300/300') no-repeat;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+
+  h2{
+    position: absolute;
+    bottom: 10px;
+    background-color: $black;
+    color: $white;
+    margin: 0;
+    padding: 10px;
+  }
+}
+.photo1{@extend .photo; background-image: url('http://stevensegallery.com/301/301');}
+.photo2{@extend .photo; background-image: url('http://stevensegallery.com/302/302');}
+.photo3{@extend .photo; background-image: url('http://stevensegallery.com/303/303');}
