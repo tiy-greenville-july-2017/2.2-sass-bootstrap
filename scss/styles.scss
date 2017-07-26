@@ -1,33 +1,89 @@
 /* Bootstrap Variables */
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-// $grid-gutter-width: 20px;
+$grid-gutter-width: 20px;
 
 /* Import Bootstrap */
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "custom";
 
 /* Color Pallet */
 $primary-brand-color: orange;
 $heading-color: #BBB;
 $black: #000;
 $white: #FFF;
+$nav-items: red;
 $banner-color: #333;
+
+body{
+  background-color: #BBB;
+}
+
+/* Nav Bar */
+nav.nav-bar{
+  margin-bottom: 20px;
+  a.nav-bar-item{
+    display: block;
+    position: relative; /* abs children */
+    background-color: $nav-items;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px 0;
+
+    &:hover{
+      background-color: darken($nav-items, 20%);
+    }
+    &::before, &::after{
+      content: '';  // "\2014"
+      position: absolute;
+      display: block;
+      width: 20px;
+      border-bottom: 2px solid lighten($white, 5%);
+      top: 50%;
+    }
+    &::before{left: 15px;}
+    &::after{right: 15px;}
+  }
+
+}
+
 
 /* All the banner styles */
 .banner {
+  @extend .text-center;
+  position: relative; /* abs children */
   background: $white url('https://www.stevensegallery.com/800/400') no-repeat; //lighten($banner-color, 20%);
   background-size: cover;
+  background-position: 0px 0px, center;
   overflow: auto;
-  height: 100vh;
+  height: 200px;
+  border: 10px solid $white;
+
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($black, 0.2);
+  }
+
+  @media (win-width: $screen-md-min){
+    img{
+      display: none;
+    }
+  }
 
   h1{
     color: $heading-color;
-    text-align: center;
+    // text-align: center;
   }
 
   h2{
     color: $heading-color;
-    text-align: center;
+    // text-align: center;
   }
 }
 
