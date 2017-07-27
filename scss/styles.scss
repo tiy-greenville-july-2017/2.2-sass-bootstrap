@@ -17,6 +17,18 @@ body{
   background-color: #BBB;
 }
 
+/* Social Nav */
+.social-nav {
+  a{
+    display: inline-block;
+    font-size: 30px;
+    padding: 10px;
+    color: rgba($white, 0.5);
+    background-color: $nav-items;
+    text-align: center;
+  }
+}
+
 /* Nav Bar */
 nav.nav-bar{
   margin-bottom: 20px;
